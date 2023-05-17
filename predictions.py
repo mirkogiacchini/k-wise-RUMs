@@ -144,16 +144,16 @@ if __name__ == '__main__':
         for ds_nm in datasets:
             print(ds_nm, slate_size)
             ds = Dataset(f'./data/clean/{ds_nm}_{slate_size}slates', keep_sum=True)
-            #kfoldCrossVal(ds.n, list_from_sums(ds.SUM_DSI), 5, seeds=[42+i for i in range(10)], out_folder=f'./predictions/{ds_nm}_{slate_size}slates_rumrunner', slate_size=slate_size, model='rumrunner')
-            #kfoldCrossVal(ds.n, list_from_sums(ds.SUM_DSI), 5, seeds=[42+i for i in range(10)], out_folder=f'./predictions/{ds_nm}_{slate_size}slates_MNL', model='MNL')
+            kfoldCrossVal(ds.n, list_from_sums(ds.SUM_DSI), 5, seeds=[42+i for i in range(10)], out_folder=f'./predictions/{ds_nm}_{slate_size}slates_rumrunner', slate_size=slate_size, model='rumrunner')
+            kfoldCrossVal(ds.n, list_from_sums(ds.SUM_DSI), 5, seeds=[42+i for i in range(10)], out_folder=f'./predictions/{ds_nm}_{slate_size}slates_MNL', model='MNL')
             kfoldCrossVal(ds.n, list_from_sums(ds.SUM_DSI), 5, seeds=[42+i for i in range(10)], out_folder=f'./predictions/{ds_nm}_{slate_size}slates_MNL_pcmc', model='MNLpcmc')
-            #kfoldCrossVal(ds.n, list_from_sums(ds.SUM_DSI), 5, seeds=[42+i for i in range(10)], out_folder=f'./predictions/{ds_nm}_{slate_size}slates_trainmatrix', slate_size=slate_size, model='trainmatrix')
+            kfoldCrossVal(ds.n, list_from_sums(ds.SUM_DSI), 5, seeds=[42+i for i in range(10)], out_folder=f'./predictions/{ds_nm}_{slate_size}slates_trainmatrix', slate_size=slate_size, model='trainmatrix')
     
     #recap evaluation
     for slate_size in slate_sizes:
         for ds_nm in datasets:
             #print(f'==== {ds_nm} --- {slate_size}')
-            #print(f'train tensor, {ds_nm} {slate_size}-slates: ', get_statistics(f'./predictions/{ds_nm}_{slate_size}slates_trainmatrix'))
-            #print(f'rumrunner, {ds_nm} {slate_size}-slates: ', get_statistics(f'./predictions/{ds_nm}_{slate_size}slates_rumrunner'))
-            #print(f'MNL, {ds_nm} {slate_size}-slates: ', get_statistics(f'./predictions/{ds_nm}_{slate_size}slates_MNL'), '\n')
+            print(f'train tensor, {ds_nm} {slate_size}-slates: ', get_statistics(f'./predictions/{ds_nm}_{slate_size}slates_trainmatrix'))
+            print(f'rumrunner, {ds_nm} {slate_size}-slates: ', get_statistics(f'./predictions/{ds_nm}_{slate_size}slates_rumrunner'))
+            print(f'MNL, {ds_nm} {slate_size}-slates: ', get_statistics(f'./predictions/{ds_nm}_{slate_size}slates_MNL'), '\n')
             print(f'MNL pcmc, {ds_nm} {slate_size}-slates: ', get_statistics(f'./predictions/{ds_nm}_{slate_size}slates_MNL_pcmc'), '\n')
