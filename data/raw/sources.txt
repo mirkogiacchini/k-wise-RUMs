@@ -1,0 +1,7 @@
+sushi: https://www.kamishima.net/sushi/
+
+SFshop, SFwork: https://github.com/sragain/pcmc-nips
+
+elections (a5,a9,a17,a48,a81): 
+https://books.google.it/books/about/Collective_Decisions_and_Voting.html?id=RN5q_LuByUoC
+https://rangevoting.org/TidemanData.html
